@@ -1,0 +1,26 @@
+[Unit]
+Description=hook
+After=network.target
+
+[Service]
+Type=simple
+User=bot
+Group=bot
+DynamicUser=true
+
+WorkingDirectory=/srv/hook
+PrivateTmp=true
+
+ExecStart=/srv/hook/venv/bin/uvicorn \
+        --proxy-headers \
+        --forwarded-allow-ips='*' \
+        --workers=4 \
+        --port=8080 \
+        --no-access-log \
+        main:app
+ExecReload=/bin/kill -HUP ${MAINPID}
+RestartSec=1
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
