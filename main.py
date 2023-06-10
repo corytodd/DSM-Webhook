@@ -25,7 +25,7 @@ issue_api = giteapy.IssueApi(giteapy.ApiClient(gitea_config))
 async def hooks(item: Item):
     body = f"""{item.description}
     
-    {os.getenv('DSM_HOST')}
+{os.getenv('DSM_HOST')}
     """
     issue = {
         "assignee": os.getenv("GITEA_ASSIGNEE"),
