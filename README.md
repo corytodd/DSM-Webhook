@@ -18,7 +18,7 @@ Use `sudo -i` to enter root, assuming your user has admin rights.
 
 Wrong
 
-```json
+```json #5,7
   "test": {
     "needssl": true,
     "port": 443,
@@ -35,7 +35,7 @@ Wrong
 
 Right
 
-```json
+```json #5,7
   "test": {
     "needssl": true,
     "port": 443,
