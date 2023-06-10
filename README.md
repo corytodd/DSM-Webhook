@@ -14,9 +14,11 @@ hard (impossible??) to setup correctly.
 2. Edit `/usr/syno/etc/synowebhook.conf` and fix the req_header. Notice
    the Content-Type is wrong and that the req_param is empty.
 
+Use `sudo -i` to enter root, assuming your user has admin rights.
+
 Wrong
 
-```
+```json
   "test": {
     "needssl": true,
     "port": 443,
@@ -33,7 +35,7 @@ Wrong
 
 Right
 
-```
+```json
   "test": {
     "needssl": true,
     "port": 443,
